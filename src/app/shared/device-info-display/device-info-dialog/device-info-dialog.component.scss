@@ -1,0 +1,33 @@
+.dialog-wrapper {
+  padding: 20px;
+  color: #FFFFFF;
+  font-size: 20px;
+  min-width: 90%;
+
+  .device-info-group-wrapper {
+    margin-bottom: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+
+    .device-info-heading {
+      font-size: 26px;
+      font-style: italic;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .device-info-detail {
+      display: flex;
+      flex-direction: row;
+
+      .device-info-detail-item {
+        display: flex;
+
+      }
+    }
+  }
+}
+

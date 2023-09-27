@@ -1,0 +1,120 @@
+@import './variables';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Eraslght, "Helvetica Neue", sans-serif;
+  letter-spacing: 2px;
+}
+
+mat-drawer-container {
+  mat-drawer {
+    transition-timing-function: cubic-bezier(1, 0.04, 0.4, 1.5);
+  }
+}
+
+@font-face {
+  font-family: 'Above-Regular';
+  src: url('../assets/fonts/Above-Regular.woff') format('woff');
+  src: url('../assets/fonts/Above-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.above-regular {
+  font-family: 'Above-Regular';
+}
+
+
+@font-face {
+  font-family: 'NEOTERIC';
+  src: url('../assets/fonts/NEOTERIC.woff') format('woff');
+  src: url('../assets/fonts/NEOTERIC.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.neoteric {
+  font-family: NEOTERIC;
+}
+
+@font-face {
+  font-family: 'happy-giraffe';
+  src: url('../assets/fonts/HappyGiraffe.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.happy-giraffe {
+  font-family: 'happy-giraffe';
+}
+
+
+@font-face {
+  font-family: 'Chicken-Scratch';
+  src: url('../assets/fonts/CHICKENSCRATCH.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.chicken-scratch {
+  font-family: 'Chicken-Scratch';
+}
+
+@font-face {
+  font-family: 'Erasmd';
+  src: url('../assets/fonts/ERASMD.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.erasmd {
+  font-family: 'Erasmd';
+}
+
+@font-face {
+  font-family: 'Eraslght';
+  src: url('../assets/fonts/ERASLGHT.woff') format('woff');
+  font-weight: light;
+  font-style: normal;
+  font-display: swap;
+}
+
+.eraslight {
+  font-family: 'Eraslight'
+}
+
+@font-face {
+  font-family: 'Felixti';
+  src: url('../assets/fonts/FELIXTI.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.felixti {
+  font-family: 'Felixti';
+}
+
+/****************************************/
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Eraslght, "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,79 @@
+<div>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header [ngClass]="{'moving': moving}">
+      <button mat-icon-button class="delete-button" (click)="delete($event)"><mat-icon>delete_forever</mat-icon></button>
+      <button mat-icon-button class="move-button" name="move-up" (click)="move($event)"><mat-icon>arrow_upward</mat-icon></button>
+      <button mat-icon-button class="move-button" name="move-down" (click)="move($event)"><mat-icon>arrow_downward</mat-icon></button>
+      <mat-panel-title>
+        <div class="exp-pnl-title">{{ getOptionType() }}</div>
+      </mat-panel-title>
+      <mat-panel-description>
+        <span *ngIf="fg.dirty" class="unsaved-changes-marker">*</span>
+        <div *ngIf="!option.divider" [ngStyle]="headerFont" class="exp-pnl-description">{{ getOptionLabel() }}</div>
+        <div *ngIf="option.divider" class="exp-pnl-description divider"><mat-divider></mat-divider></div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="expansion-panel-contents">
+      <mat-form [formGroup]="fg" class="form-group">
+        <div class="form-field">
+          <label class="form-field-label" for="idControl">ID: </label>
+          <label class="form-field-label">{{ option.id }}</label>
+
+        </div>
+        <mat-form-field class="form-field">
+          <div class="controls-wrapper">
+            <label class="form-field-label">Title</label>
+            <input matInput formControlName="title" />
+          </div>
+          <mat-error>
+            <div *ngIf="fg && fg.errors && fg.errors.isDividerButHasOtherValues">A divider should not have any additional values set.</div>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <div class="controls-wrapper">
+            <label class="form-field-label">Path</label>
+            <input matInput formControlName="path" />
+          </div>
+          <mat-error>
+            <div *ngIf="fg && fg.errors && fg.errors.isDividerButHasOtherValues">A divider should not have any additional values set.</div>
+            <div *ngIf="fg && fg.errors && fg.errors.subheaderShouldNotHavePath">A Sub Header item should not have a value for path</div>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <div class="controls-wrapper">
+            <label class="form-field-label">Active ID Pattern</label>
+            <input matInput formControlName="activeIdPattern" />
+          </div>
+          <mat-error>
+            <div *ngIf="fg && fg.errors && fg.errors.subheaderShouldNotHaveActiveIdPattern">A Sub Header should not have a value for Active ID Pattern</div>
+            <div *ngIf="fg && fg.errors && fg.errors.isDividerButHasOtherValues">A divider should not have any additional values set.</div>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="form-field checkbox-form-field">
+          <label class="form-field-label" for="dividerControl">Divider
+          </label>
+          <mat-checkbox formControlName="divider" color="primary" />
+        </div>
+
+        <div class="form-field checkbox-form-field">
+          <label class="form-field-label" for="subheaderControl">Sub Header
+          </label>
+          <mat-checkbox formControlName="subheader" color="primary" />
+        </div>
+        <mat-error>
+          <div *ngIf="fg && fg.errors && fg.errors.cannotBeDividerAndSubheader" class="checkbox errors">A Menu Item cannot be both a divider and a sub header.</div>
+        </mat-error>
+        <div class="actions-footer">
+          <div class="spacer"></div>
+          <button mat-raised-button color="primary" (click)="save()" [disabled]="!fg.valid || fg.pristine">Submit</button>
+        </div>
+      </mat-form>
+    </div>
+
+
+  </mat-expansion-panel>
+  <!-- </mat-accordion> -->
+</div>

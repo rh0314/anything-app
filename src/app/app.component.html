@@ -1,0 +1,6 @@
+<div id="mainAppDiv" *ngIf="theme$ | async as theme" [ngClass]="{ 'dark-theme': theme === 'dark', 'light-theme': theme === 'light', 'fade-in': fadeIn, 'fade-out': fadeOut }">
+    <div class="screen-wrapper mat-app-background">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+

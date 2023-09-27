@@ -1,0 +1,55 @@
+<div #componentWrapper class="component-wrapper contest-entry-content-wrapper">
+  <div class="flex-row" [ngClass]="{'sidenav-open': sidenavIsOpen}">
+    <div class="flex-padding h1-buffer"></div>
+    <h1 class="component-title">{{ title }} <mat-icon class="info-icon" (click)="infoClick()">info</mat-icon></h1>
+    <div class="flex-padding h1-buffer"></div>
+  </div>
+  <div class="flex-row" [ngClass]="{'sidenav-open': sidenavIsOpen}">
+    <div class="flex-padding h1-buffer"></div>
+    <h2 class="component-subtitle">{{ subtitle }}</h2>
+    <div class="flex-padding h1-buffer"></div>
+  </div>
+
+
+  <mat-card [ngClass]="{'sidenav-open': sidenavIsOpen}">
+    <mat-card-content>
+      <div class="flex-row top-row images-content-row" [ngClass]="{'sidenav-open': sidenavIsOpen, 'small-screen': smallScreen }">
+        <mat-form [formGroup]="fg" class="form-group">
+          <mat-form-field class="form-field">
+            <div class="controls-wrapper">
+              <label class="form-field-label">First Name</label>
+              <input matInput formControlName="firstName" />
+            </div>
+          </mat-form-field>
+          <mat-form-field class="form-field">
+            <label class="form-field-label">Last Name</label>
+            <input matInput formControlName="lastName" />
+          </mat-form-field>
+          <mat-form-field class="form-field">
+            <label class="form-field-label">Phone Number</label>
+            <input matInput formControlName="phoneNumber" />
+            <div class="form-field-error" *ngIf="fg.controls['phoneNumber'].errors?.['phoneValid']"><sup>*</sup>This is not a valid phone number.</div>
+          </mat-form-field>
+          <mat-form-field class="form-field">
+            <label class="form-field-label">Email</label>
+            <input matInput formControlName="email" />
+          </mat-form-field>
+
+          <div class="form-field checkbox-form-field">
+            <label class="form-field-label" for="returnCustomer">Return Customer</label>
+            <mat-checkbox formControlName="returnCustomer" color="primary" />
+          </div>
+
+        </mat-form>
+      </div>
+    </mat-card-content>
+    <mat-card-footer [matTooltip]="formIsValid ? 'Click to Submit' : 'Some form fields are incomplete or invalid.  Please complete/correct before submit.'">
+      <button mat-raised-button color="primary" (click)="submit()" [disabled]="!fg.valid">Submit</button>
+    </mat-card-footer>
+  </mat-card>
+  <mat-card *ngIf="submitted">
+    <mat-card-content>
+      {{ submittedMessage }}
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,23 @@
+<div class="dialog-outer-wrapper">
+  <h1>Configuration Data saved in Local Storage</h1>
+  <hr />
+  <div class="spacer"></div>
+  <div class="dialog-content-wrapper">
+    <mat-table [dataSource]="configData">
+    <ng-container matColumnDef="key">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> KEY </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="value" class="key-cell"><div class="cell-spacer">
+        <div class="cell-data"> {{row.key}} </div></div></mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="value">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> VALUE </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="value" class="value-cell"><div class="cell-spacer"><div class="cell-data"> {{row.value}} </div></div> </mat-cell>
+    </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  <div class="spacer"></div>
+</div>

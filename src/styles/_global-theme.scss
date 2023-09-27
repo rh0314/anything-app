@@ -1,0 +1,426 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+
+$global-theme: '';
+
+@mixin set-global-theme($theme) {
+  $global-theme: $theme;
+}
+
+@mixin title-primary-color($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .dark-theme {
+    .component-title {
+      color: mat.get-color-from-palette($primary-palette, A100);
+
+      .info-icon {
+        transition-property: opacity;
+        transition-duration: 250ms;
+        opacity: 0.2;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .light-theme {
+    .component-title {
+      color: mat.get-color-from-palette($primary-palette, 800);
+    }
+
+    .info-icon {
+      transition-property: opacity;
+      transition-duration: 250ms;
+      opacity: 0.2;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+}
+
+@mixin subtitle-accent-color($theme) {
+  $color-config: mat.get-color-config($theme);
+  $accent-palette: map.get($color-config, 'accent');
+
+  .dark-theme {
+    .component-subtitle {
+      color: mat.get-color-from-palette($accent-palette, 300);
+    }
+  }
+
+  .light-theme {
+    .component-subtitle {
+      color: mat.get-color-from-palette($accent-palette, 800);
+    }
+  }
+}
+
+@mixin tooltip-style-dark($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .cdk-overlay-container {
+    .gifs-app-tooltip {
+      .mdc-tooltip__surface {
+        font-size: 22px;
+        line-height: 24px;
+        // color: rgb(42, 41, 41);
+        color: #2a2a2a;
+        background: mat.get-color-from-palette($accent-palette, 200);
+        background: linear-gradient(90deg,
+            mat.get-color-from-palette($accent-palette, 500) 0%,
+            mat.get-color-from-palette($accent-palette, A100) 100%);
+        border-radius: 10px;
+        border: 2px solid #000000;
+        padding: 8px;
+        box-shadow: 8px 8px 20px #212121, 4px 4px 10px #757575;
+        font-family: 'Eraslght';
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+
+@mixin tooltip-style-light($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .cdk-overlay-container {
+    .gifs-app-tooltip {
+      .mdc-tooltip__surface {
+        font-size: 22px;
+        line-height: 24px;
+        color: #171717;
+        background: mat.get-color-from-palette($accent-palette, 900);
+        background: linear-gradient(90deg,
+            mat.get-color-from-palette($accent-palette, A700) 0%,
+            mat.get-color-from-palette($accent-palette, A100) 100%);
+        border-radius: 10px;
+        border: 2px solid #000000;
+        padding: 8px;
+        box-shadow: 8px 8px 20px #0e0e0e, 4px 4px 10px #404040;
+        font-family: 'Eraslght';
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+
+@mixin active-menu-item-common($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .menu-item-content {
+
+    .menu-subheader {
+      border: none;
+      text-transform: capitalize;
+    }
+  }
+}
+
+@mixin active-menu-item-dark($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .menu-item-content {
+
+    .menu-item-selectable {
+      color: mat.get-color-from-palette($primary-palette, 300);
+
+      &:hover {
+        padding: 2px;
+        border: 1px solid mat.get-color-from-palette($accent-palette, A200);
+      }
+    }
+
+    &.active {
+      .menu-item-selectable {
+        border: 3px solid mat.get-color-from-palette($accent-palette, A200);
+        background-color: mat.get-color-from-palette($accent-palette, A200);
+        color: mat.get-color-from-palette($primary-palette, 900);
+
+
+        &:hover {
+          padding: 3px;
+          border: 3px solid mat.get-color-from-palette($accent-palette, A200);
+        }
+      }
+        .menu-subheader {
+        color: mat.get-color-from-palette($accent-palette, 900);
+        border: none;
+      }
+    }
+  }
+}
+
+@mixin active-menu-item-light($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .menu-item-content {
+    .menu-item-selectable {
+      color: mat.get-color-from-palette($primary-palette, 500);
+
+      &:hover {
+        padding: 2px;
+        border: 1px solid mat.get-color-from-palette($accent-palette, A700);
+      }
+    }
+
+    &.active {
+      .menu-item-selectable {
+        border: 3px solid mat.get-color-from-palette($accent-palette, A400);
+        background-color: mat.get-color-from-palette($accent-palette, A400);
+        color: mat.get-color-from-palette($primary-palette, 900);
+
+
+        &:hover {
+          padding: 3px;
+          border: 3px solid mat.get-color-from-palette($accent-palette, A00);
+        }
+      }
+
+      .menu-subheader {
+        border: none;
+        color: mat.get-color-from-palette($accent-palette, 300)
+      }
+    }
+  }
+}
+
+
+@mixin info-icons($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .dark-theme {
+    mat-icon {
+      &.info-icon {
+        color: mat.get-color-from-palette($accent-palette, 500);
+        cursor: pointer;
+
+        &:hover {
+          color: mat.get-color-from-palette($accent-palette, 700);
+        }
+      }
+    }
+  }
+
+  .light-theme {
+    mat-icon {
+      &.info-icon {
+        color: mat.get-color-from-palette($accent-palette, 700);
+        cursor: pointer;
+
+        &:hover {
+          color: mat.get-color-from-palette($accent-palette, 500);
+        }
+      }
+    }
+  }
+}
+
+@mixin todo-icons($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .dark-theme {
+    mat-icon {
+      &.todo-icon {
+        background-color: mat.get-color-from-palette($accent-palette, 900);
+        //color: mat.get-color-from-palette($accent-palette, A200);
+        color: rgb(166, 166, 166);
+
+        &:hover {
+          background-color: mat.get-color-from-palette($accent-palette, 700);
+        }
+      }
+    }
+  }
+
+  .light-theme {
+    mat-icon {
+      &.todo-icon {
+        background-color: mat.get-color-from-palette($accent-palette, A400);
+        color: mat.get-color-from-palette($primary-palette, 900);
+
+        &:hover {
+          background-color: mat.get-color-from-palette($accent-palette, A700);
+        }
+      }
+    }
+  }
+}
+
+@mixin setAppLightBackground($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  mat-drawer-content {
+    background-color: mat.get-color-from-palette($primary-palette, 50);
+  }
+
+  .layout-component-wrapper {
+    mat-drawer {
+      background-color: mat.get-color-from-palette($primary-palette, 100);
+    }
+  }
+
+}
+
+@mixin snackbar-light-theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .any-snackbar {
+    background-color: mat.get-color-from-palette($primary-palette, 300);
+    border: 3px solid mat.get-color-from-palette($accent-palette, 800);
+    color: #2e2e2e;
+  }
+
+  .mdc-snackbar__surface {
+    padding: 0;
+  }
+
+  .mdc-snackbar__surface,
+  .mdc-snackbar,
+  .mdc-snackbar__label {
+    background-color: mat.get-color-from-palette($primary-palette, 300);
+    color: #2e2e2e;
+  }
+
+  .snackbar-actions-row {
+    button {
+      mat-icon {
+        color: #2e2e2e;
+      }
+
+      .mdc-button__label {
+        word-break: keep-all;
+        color: #2e2e2e;
+        white-space: nowrap;
+      }
+    }
+
+    a {
+      color: #2e2e2e;
+
+    }
+  }
+}
+
+@mixin snackbar-dark-theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .any-snackbar {
+    background-color: mat.get-color-from-palette($primary-palette, 300);
+    border: 3px solid mat.get-color-from-palette($accent-palette, 800);
+    color: #2e2e2e;
+  }
+
+  .mdc-snackbar__surface {
+    padding: 0;
+  }
+
+  .mdc-snackbar__surface,
+  .mdc-snackbar,
+  .mdc-snackbar__label {
+    background-color: mat.get-color-from-palette($primary-palette, 300);
+    color: #2e2e2e;
+  }
+
+  .snackbar-actions-row {
+    button {
+      mat-icon {
+        color: #2e2e2e;
+      }
+
+      .mdc-button__label {
+        word-break: keep-all;
+        color: #2e2e2e;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+@mixin sidenav-light-theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .close-sidenav-button-container {
+    button {
+      mat-icon {
+        color: mat.get-color-from-palette($accent-palette, 600);
+      }
+    }
+  }
+
+  .menu-title {
+    color: mat.get-color-from-palette($accent-palette, 900);
+  }
+}
+
+@mixin sidenav-dark-theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+
+  .close-sidenav-button-container {
+    button {
+      mat-icon {
+        color: mat.get-color-from-palette($accent-palette, 600);
+      }
+    }
+  }
+
+  .menu-title {
+    color: mat.get-color-from-palette($accent-palette, A700);
+  }
+}
+
+// @mixin home-light-theme($theme) {
+//   $color-config: mat.get-color-config($theme);
+//   $primary-palette: map.get($color-config, 'primary');
+//   $accent-palette: map.get($color-config, 'accent');
+
+//   any-home {
+//     .component-wrapper {
+//       background-color: mat.get-color-from-palette($primary-palette, 50);
+//     }
+//   }
+// }
+
+// @mixin home-dark-theme($theme) {
+//   $color-config: mat.get-color-config($theme);
+//   $primary-palette: map.get($color-config, 'primary');
+//   $accent-palette: map.get($color-config, 'accent');
+
+//   any-home {
+//     .component-wrapper {
+//       background-color: mat.get-color-from-palette($primary-palette, 800);
+//     }
+//   }
+// }

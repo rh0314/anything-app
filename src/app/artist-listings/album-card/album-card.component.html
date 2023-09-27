@@ -1,0 +1,17 @@
+<mat-card (click)="showReview()">
+  <mat-card-content>
+    <div #wrapper class="album-card-wrapper" matTooltip="Click to read album review">
+      <div class="front">
+      <div class="album-card-image-container" [ngStyle]="{ 'background-image': 'url(' + album.url + ')' }">
+        <img *ngIf="(album.url.indexOf('placeholder.com') > -1)" src="assets/images/record-colorful-note.png" class="album-image" />
+      </div>
+      <div class="album-name">
+        {{ album.title }}
+      </div>
+    </div>
+    <div class="back">
+      THIS IS THE BACK
+    </div>
+    </div>
+  </mat-card-content>
+</mat-card>

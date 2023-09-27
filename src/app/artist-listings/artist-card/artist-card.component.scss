@@ -1,0 +1,60 @@
+.artist-header-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+h1 {
+  width: 100%;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.artist-name,
+.artist-id {
+  display: flex;
+  flex: 0;
+}
+
+.artist-name {
+  min-width: 350px;
+  font-size: 14px;
+}
+
+.artist-id {
+  font-size: 12px;
+  float: right;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.artist-bio {
+  p:first-of-type {
+    margin-block-start: 30px;
+    margin-block-end: -10px;
+    font-weight: bold;
+  }
+}
+
+.artist-content-wrapper {
+  display: flex;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.artist-album-wrapper {
+  display: flex;
+  flex: 0;
+}
+
+.spacer {
+  display: flex;
+  flex: 1;
+}
+

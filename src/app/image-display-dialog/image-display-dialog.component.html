@@ -1,0 +1,17 @@
+<div class="overlay" (click)="close()"></div>
+<div #wrapper id="wrapper" class="image-display-dialog-wrapper">
+    <mat-dialog-content #content id="content" class="image-display-dialog-content">
+        <img #dialogImage id="dialogImage" *ngIf="image.type === 'gif'" class="dialog-image" [src]="image.path" />
+        <!-- <div *ngIf="image.type === 'gif'" #dialogImage id="dialogImage" class="dialog-image" [ngStyle]="{ 'background-image': 'url(' + image.path + ')' }">
+        </div> -->
+
+        <video *ngIf="image.type === 'video'" #dialogVideo class="dialog-video" id="dialogVideo" controls autoplay>
+            <source [src]="image.path" />
+        </video>
+
+    </mat-dialog-content>
+
+    <!-- <mat-dialog-actions>
+        <button class="mat-raised-button" (click)="close()">Close</button>
+    </mat-dialog-actions> -->
+</div>

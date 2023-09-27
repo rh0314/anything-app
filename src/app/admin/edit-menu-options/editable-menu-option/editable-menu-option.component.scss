@@ -1,0 +1,124 @@
+@import '../../../../styles/global-theme';
+@import '../../../../styles/variables';
+
+mat-card {
+  margin: 15px;
+  width: 40%;
+  max-width: 40%;
+}
+
+.exp-pnl-title {
+  font-size: 18px;
+
+}
+
+mat-panel-description {
+  .exp-pnl-description {
+    font-size: 24px;
+
+    &.divider {
+      width: 100%;
+    }
+
+  }
+
+  &.subeader {
+    .exp-pnl-description {
+      font-family: $menu-subheader-font-family;
+    }
+  }
+}
+
+mat-form-field {
+  width: 100%;
+
+  &.ng-dirty {
+    border: 2px solid blue;
+    border-radius: 5px;
+  }
+
+  &.ng-invalid {
+    border: 2px solid red;
+  }
+
+  &.ng-valid {
+    mat-mdc-form-field-subscript-wrapper {
+      max-height: 0px;
+    }
+  }
+}
+
+mat-error {
+  div {
+    margin-top: -20px;
+  }
+}
+
+.delete-button,
+.move-button {
+  margin-left: -20px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+
+  mat-icon {
+    height: 38px;
+    width: 38px;
+    font-size: 36px;
+  }
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  width: 100%;
+  min-width: 100%;
+  justify-items: space-between;
+
+  .card-cell {
+    display: flex;
+    margin-right: 15px;
+    padding-left: 15px;
+    flex-direction: column;
+  }
+}
+
+.actions-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  button {
+    display: flex;
+    flex: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+}
+
+mat-expansion-panel-header {
+  &:hover {
+    &.moving {
+
+      background-color: rgb(138, 138, 138);
+    }
+  }
+
+  &.moving {
+    background-color: rgb(138, 138, 138);
+
+  }
+
+}
+
+.mat-expansion-panel-content {
+  margin-top: 20px;
+}
+
+.unsaved-changes-marker {
+  font-size: 20px;
+  margin-right: 10px;
+}

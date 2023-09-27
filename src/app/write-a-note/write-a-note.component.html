@@ -1,0 +1,19 @@
+<div class="component-wrapper write-a-note-component-wrapper" [ngClass]="{'sidenav-is-open': sidenavIsOpen, 'fade-in': fadeIn, 'fade-out': fadeOut }">
+  <h1 class="component-title">Write a note</h1>
+  <h2 class="component-subtitle">We'll have it analyzed and stuidied by our super-computer<sup>*</sup>.  So make it smart!</h2>
+  <div class="spacer"></div>
+  <div class="disclaimer-container">
+    <div class="disclaimer">
+    * There isn't really any super-computer that's going to analyze what you write.  This is just a dumb little thing that is only here for a laugh or two.  In fact, even the simulated 'super-computer' isn't all that impressive.  Just enjoy it for what it's worth, which isn't much.
+    </div>
+  </div>
+  <div class="letter-page-wrapper">
+    <button mat-raised-button color="primary" class="send-button top-send-button" (click)="send()" [disabled]="!changed">SEND!</button>
+    <textarea #textarea1 id="textarea1" autofocus="true" [(ngModel)]="letterText" (click)="textareaClick()"></textarea>
+    <div class="notepad-prompt-text" (click)="textareaClick()" [ngClass]="{ 'sent': sent, 'changed': changed }" >
+          Write whatever is on your mind...
+
+    </div>
+  </div>
+  <div class="spacer"></div>
+</div>

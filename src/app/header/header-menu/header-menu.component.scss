@@ -1,0 +1,25 @@
+@import '../../../styles/global-theme';
+@import '../../../styles/variables';
+
+.theme-switch-wrapper {
+  padding-left: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+
+  any-theme-switcher {
+    display: flex;
+    flex: 0;
+  }
+
+  .spacer {
+    display: flex;
+    flex: 1;
+  }
+
+  .info-i-wrapper {
+    display: flex;
+    flex: 0;
+  }
+}

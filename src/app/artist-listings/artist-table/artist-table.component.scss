@@ -1,0 +1,138 @@
+@import '../../../styles/variables';
+
+$artist-table-wrapper-side-margin: 24px;
+
+.artist-table-wrapper {
+  margin-right: $artist-table-wrapper-side-margin;
+  margin-left: $artist-table-wrapper-side-margin;
+
+  &.sidenav-open {
+    max-width: calc(100% - $artist-table-wrapper-side-margin - $artist-table-wrapper-side-margin - 280px);
+
+  }
+}
+
+mat-expansion-panel {
+  width: 100%;
+  text-align: left;
+  white-space: wrap;
+
+  &:last-of-type {
+    margin-bottom: 4px;
+  }
+}
+
+.artist-template-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-template-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  h1 {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 2em;
+    font-family: 'NEOTERIC';
+    letter-spacing: 4px;
+
+    @media(max-width: $small-screen-cutoff) {
+      font-size: 1.5em;
+    }
+  }
+}
+
+mat-panel-title {
+  h3 {
+    font-size: 0.8em;
+  }
+}
+
+.about-the-artist {
+  white-space: nowrap;
+  display: flex;
+  flex: 0;
+  font-family: 'Erasmd';
+  letter-spacing: 4px;
+  font-size: 22px;
+
+  @media(max-width: $small-screen-cutoff) {
+    font-size: 16px;
+  }
+}
+
+.bio-preview {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  max-height: 20px;
+  font-family: 'Eraslght';
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+mat-panel-description {
+  width: 100%;
+  max-width: 100%;
+}
+
+.bio-text {
+  white-space: wrap;
+  width: 100%;
+  display: flex;
+  font-family: 'Erasmd';
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 2px;
+}
+
+.music-catalog {
+  font-family: 'Erasmd';
+  letter-spacing: 4px;
+}
+
+.catalog-preview {
+  font-family: 'Eraslght';
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.albums-display {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.album-card-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media(max-width: $small-screen-cutoff) {
+    justify-content: center;
+  }
+
+  any-album-card {
+    display: flex;
+    flex: 0;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .spacer {
+    display: flex;
+    flex: 1;
+
+    @media (max-width: $small-screen-cutoff) {
+      display: none;
+    }
+  }
+
+
+}

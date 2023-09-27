@@ -1,0 +1,40 @@
+.spacer {
+  display: flex;
+  flex: 1;
+}
+
+.dialog-content-wrapper {
+  width: 60vw;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  flex: 0;
+  margin: 35px;
+  height: 105%;
+
+}
+
+mat-table {
+  width: 50%;
+  vertical-align: middle;
+
+  mat-cell, mat-header-cell {
+    font-size: 24px;
+  }
+}
+
+.key-cell {
+  text-align: right;
+  border-right: 1px solid;
+  padding-right: 25px;
+}
+
+.cell-data {
+  display: flex;
+  flex: 0;
+}
+
+.cell-spacer {
+  display: flex;
+  flex: 1;
+}

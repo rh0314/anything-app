@@ -1,0 +1,44 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin header-dark-theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+  $warn-palette: map.get($color-config, 'warn');
+
+  a {
+    color: mat.get-color-from-palette($accent-palette, 500);
+
+    &:visited {
+      color: mat.get-color-from-palette($accent-palette, 600);
+    }
+  }
+
+  .unhide-header-tab {
+    background-color: mat.get-color-from-palette($accent-palette, 100);
+    color: mat.get-color-from-palette($accent-palette, 900);
+  }
+
+}
+
+
+@mixin header-light-theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+  $warn-palette: map.get($color-config, 'warn');
+
+  a {
+    color: mat.get-color-from-palette($accent-palette, 900);
+
+    &:visited {
+      color: mat.get-color-from-palette($accent-palette, 600);
+    }
+  }
+
+  .unhide-header-tab {
+    background-color: mat.get-color-from-palette($accent-palette, 900);
+    color: mat.get-color-from-palette($accent-palette, 50);
+  }
+}

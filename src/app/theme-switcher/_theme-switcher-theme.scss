@@ -1,0 +1,38 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin toggle-button-style($theme) {
+
+    .dark-theme {
+        $color-config: mat.get-color-config($theme);
+        $accent-palette: map.get($color-config, 'accent');
+        $primary-palette: map.get($color-config, 'primary');
+
+        mat-button-toggle {
+            &.active {
+                background-color: mat.get-color-from-palette($accent-palette, A700);
+
+                span {
+                    color: mat.get-color-from-palette($primary-palette, 900);
+                }
+            }
+        }
+    }
+
+    .light-theme {
+        $color-config: mat.get-color-config($theme);
+        $accent-palette: map.get($color-config, 'accent');
+        $primary-palette: map.get($color-config, 'primary');
+
+        mat-button-toggle {
+            &.active {
+                background-color: mat.get-color-from-palette($accent-palette, A100);
+
+                span {
+                    color: mat.get-color-from-palette($primary-palette, 900);
+                }
+
+            }
+        }
+    }
+}

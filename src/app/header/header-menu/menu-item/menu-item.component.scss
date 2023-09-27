@@ -1,0 +1,39 @@
+@import '../../../../styles/variables';
+
+.menu-item-component-wrapper {
+  &.is-divider {
+    cursor: default;
+  }
+}
+
+
+
+.menu-item-selectable {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-left: 10px;
+  border-radius: 15px;
+  padding: 3px;
+  font-family: 'Erasmd';
+  font-size: 22px;
+  text-align: center;
+
+  @media(max-width: $small-screen-cutoff) or (max-height: $small-screen-height-cutoff) {
+    margin-left: 8px;
+  }
+}
+
+.menu-subheader {
+  font-family: $menu-subheader-font-family;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  cursor: default;
+  letter-spacing: 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+  @media(max-width: $small-screen-cutoff) or (max-height: $small-screen-height-cutoff) {}
+}

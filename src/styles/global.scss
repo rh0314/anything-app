@@ -1,0 +1,275 @@
+@import './variables';
+
+
+mat-card {
+  .overview-body {
+    font-family: Eraslght,
+      "Helvetica Neue",
+      sans-serif;
+      letter-spacing: 2px;
+    }
+
+  @media(max-width: $small-screen-cutoff) {
+    padding: 5px;
+    margin: 5px;
+  }
+}
+
+mat-icon {
+  &.info-icon {
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 8px;
+    height: 42px;
+    width: 43px;
+    font-size: 38px;
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &.todo-icon {
+    border-radius: 50px;
+    font-size: 18px;
+    height: 20px;
+    padding-bottom: 5px;
+    padding-left: 7px;
+    padding-right: 5px;
+    padding-top: 7px;
+    width: 20px;
+    margin-bottom: 4px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+
+
+  @media(max-width: $small-screen-cutoff) or (max-height: $small-screen-height-cutoff) {
+    height: 21px;
+    width: 21.5px;
+    font-size: 19px;
+    margin-top: 0px;
+  }
+}
+
+
+h1,
+h2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h1 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+h2 {
+  margin-bottom: 35px;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+}
+
+.screen-wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+
+}
+
+.component-subtitle,
+.component-title {
+  font-family: 'NEOTERIC';
+  font-weight: bold;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+
+  @media (max-width: $small-screen-cutoff) or (max-height: $small-screen-height-cutoff) {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    width: 85vw;
+  }
+
+  &.around {
+    justify-content: space-around;
+  }
+
+  @media (min-width: $small-screen-cutoff-plus-1) and (max-width: 1410px) {
+    justify-content: space-around;
+
+    .flex-spacer {
+      display: none;
+    }
+  }
+
+  &.sidenav-open {
+    width: calc(100vw - 280px);
+    max-width: calc(100vw - 280px);
+  }
+}
+
+.flex-cell {
+  display: flex;
+  padding: 8px;
+  max-width: 450px;
+
+  @media (max-width: $small-screen-cutoff) or (max-height: $small-screen-height-cutoff) {
+    max-width: 100%;
+    margin-bottom: 35px;
+  }
+}
+
+.flex-padding {
+  display: flex;
+  flex-grow: 1;
+
+  @media (max-width: $small-screen-cutoff) or (max-height: $small-screen-height-cutoff) {
+    min-height: 15px;
+  }
+}
+
+.flex-cell>any-image-display {
+  max-width: 100%;
+
+  @media(max-width: $small-screen-cutoff) or (max-height: $small-screen-height-cutoff) {
+    max-width: 75vw;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 30px;
+
+    @media (max-width: $small-screen-cutoff) or (max-height: $small-screen-height-cutoff) {
+      width: 100%;
+      min-width: 70vw;
+      height: auto;
+      margin: 0px;
+    }
+  }
+
+}
+
+.h1-buffer {
+  display: flex;
+  flex: 1;
+}
+
+
+
+.component-wrapper {
+
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+
+  width: 100%;
+  height: 100%;
+
+  &.destroy {
+    transition-property: opacity;
+    transition-duration: 2500ms;
+    opacity: 0;
+  }
+
+}
+
+.fade-in {
+  .component-wrapper {
+    transition-property: opacity, transform;
+    transition-delay: 150ms;
+    transition-duration: 250ms;
+    opacity: 1;
+    // transform: scale(1);
+  }
+}
+
+.fade-out {
+  .component-wrapper {
+    transition-property: opacity, transform;
+    transition-delay: 0ms;
+    transition-duration: 150ms;
+    opacity: 0;
+    // transform: scale(1.25)
+  }
+}
+
+.any-snackbar {
+  text-align: center;
+  border-radius: 5px;
+
+  .mat-mdc-snack-bar-label {
+    font-size: 22px;
+    border-radius: 5px;
+  }
+}
+
+.global-description-anything-app-img {
+  height: 20px;
+  width: auto;
+  box-shadow: none;
+  border-radius: 0px;
+  cursor: default;
+}
+
+.basic-snackbar-wrapper {
+  font-size: 21px;
+  padding: 10px;
+  line-height: 25px;
+  margin: 0;
+}
+
+.snackbar-actions-row {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .spacer {
+    display: flex;
+    flex: 1;
+  }
+
+  button {
+    display: flex;
+    flex: 0;
+    margin-right: 18px;
+
+
+    .mdc-button__label {
+      word-break: keep-all;
+      white-space: nowrap;
+    }
+  }
+
+  mat-icon {
+    height: 42px;
+    width: 42px;
+  }
+}
+
+

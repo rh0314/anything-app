@@ -1,0 +1,22 @@
+<div class="component-wrapper image-board-content-wrapper" *ngIf="imageBoard">
+  <div class="flex-row" [ngClass]="{'sidenav-open': sidenavIsOpen}" *ngIf="imageBoard">
+    <div class="flex-padding h1-buffer"></div>
+    <h1 [ngClass]="imageBoard.boardFontClass || 'markerfelt-thin'" class="component-title">{{ imageBoard.title }} <mat-icon class="info-icon" (click)="infoClick()">info</mat-icon></h1>
+    <div class="flex-padding h1-buffer"></div>
+  </div>
+  <div class="flex-row" [ngClass]="{'sidenav-open': sidenavIsOpen}" *ngIf="imageBoard">
+    <div class="flex-padding h1-buffer"></div>
+    <h2 [ngClass]="imageBoard.boardFontClass || 'markerfelt-thin'" class="component-subtitle">{{ imageBoard.subtitle }}</h2>
+    <div class="flex-padding h1-buffer"></div>
+  </div>
+
+
+
+  <div class="flex-row top-row images-content-row" *ngIf="images$ | async as imgs" [ngClass]="{'sidenav-open': sidenavIsOpen, 'around': around}">
+    <div class="flex-cell images-content-cell" *ngFor="let img of imgs">
+      <any-image-display [image]="img" [width]="250"> </any-image-display>
+    </div>
+  </div>
+
+  <div class="flex-row bottom-spacer"></div>
+</div>

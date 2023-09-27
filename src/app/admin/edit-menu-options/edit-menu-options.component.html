@@ -1,0 +1,27 @@
+<div class="component-wrapper">
+  <div class="flex-row" [ngClass]="{'sidenav-open': sidenavIsOpen}">
+    <div class="flex-padding h1-buffer"></div>
+    <h1 class="component-title">{{ title }} <mat-icon class="info-icon" (click)="infoClick()">info</mat-icon></h1>
+    <div class="flex-padding h1-buffer"></div>
+  </div>
+  <div class="flex-row" [ngClass]="{'sidenav-open': sidenavIsOpen}">
+    <div class="flex-padding h1-buffer"></div>
+    <h2 class="component-subtitle">{{ subtitle }}</h2>
+    <div class="flex-padding h1-buffer"></div>
+  </div>
+
+  <div anySizeWatcher class="flex-row" [ngClass]="{'sidenav-open': sidenavIsOpen}">
+    <mat-card>
+      <mat-card-content>
+        <div class="editable-options-wrapper" *ngIf="options">
+          <mat-accordion>
+            <any-editable-menu-option (click)="optionClicked()" *ngFor="let option of options" [ngClass]="{ moving: movingId === option.id }" [option]="option" [moving]="(movingId === option.id)" (onsave)="saveOptions($event)" (onmove)="move($event)" (ondelete)="delete($event)" (dirty)="onDirtyChange($event)" (pristine)="onPristineChange($event)"  matTooltop="Click to open and edit"></any-editable-menu-option>          </mat-accordion>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+        <button mat-stroked-button class="add-button" (click)="add()"><mat-icon>add_circle</mat-icon>Add New Item</button>
+        <div *ngIf="success && pristine" class="footer-success-message">Changes successfully saved.</div>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

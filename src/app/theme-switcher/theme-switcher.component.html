@@ -1,0 +1,9 @@
+<div *ngIf="!smallScreen"  anySmallScreenWatcher (smallScreenChanged)="smallScreenChanged($event)">
+  <mat-button-toggle-group name="themeChoice" aria-label="Font Style" [(ngModel)]="theme" [ngClass]="{ 'dark-theme': theme === 'dark', 'light-theme': theme === 'light' }">
+    <mat-button-toggle value="light" (click)="setTheme('light')" [ngClass]="{'active': theme === 'light'}"><span>Light Theme</span></mat-button-toggle>
+    <mat-button-toggle value="dark" (click)="setTheme('dark')"   [ngClass]="{'active': theme === 'dark'}"><span>Dark Theme</span></mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+<div *ngIf="smallScreen" class="mobile-theme-switcher">
+  <mat-slide-toggle (click)="toggleClick($event)" [(ngModel)]="darkTheme">Dark Mode</mat-slide-toggle>
+</div>

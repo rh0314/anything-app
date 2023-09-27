@@ -1,0 +1,167 @@
+component-wrapper {
+  overflow: hidden;
+}
+
+.write-a-note-component-wrapper {
+  position: relative;
+  display: flex;
+  width: 98%;
+  height: 100vh;
+  flex-direction: column;
+  transition-property: opacity;
+  transition-duration: 650ms;
+  transition-timing-function: ease-in-out;
+
+  &.fade-in {
+    transition-property: opacity;
+    transition-duration: 750ms;
+    opacity: 1;
+    transition-delay: 0;
+  }
+
+  &.fade-out {
+    transition-property: opacity;
+    transition-duration: 250ms;
+    opacity: 0;
+    transition-delay: 0;
+  }
+}
+
+h1 {
+  width: 100%;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.top-send-button {
+  position: absolute;
+  top: 15px;
+  left: 760px;
+  z-index: 15;
+
+}
+
+.notepad-prompt-text {
+  position: absolute;
+  z-index: 10;
+  width: 550px;
+  left: 200px;
+  top: 175px;
+  opacity: 0.6;
+  font-size: 80px;
+  text-align: center;
+  font-style: italic;
+  transition-property: all;
+  transition-duration: 650ms;
+  transition-timing-function: ease-in-out;
+  color: #000000;
+  font-family: 'Erasmd';
+
+  &:focus {
+    outline: none;
+    opacity: 0;
+  }
+
+  &:hover {
+    outline: none;
+    opacity: 0;
+  }
+
+  &.sent {
+    opacity: 0;
+  }
+
+  &.changed {
+    opacity: 0;
+  }
+}
+
+.letter-page-wrapper {
+  position: absolute;
+  top: 150px;
+  width: 850px;
+  height: 1000px;
+  display: flex;
+  flex: 0;
+  margin-left: calc((100% - 850px) / 2);
+  
+
+  .spacer {
+    display: flex;
+    flex: 1;
+  }
+
+  #textarea1 {
+    padding-left: 160px;
+    padding-top: 70px;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/notepad.PNG');
+    font-family: 'Chicken-Scratch';
+    font-size: 42px;
+    color: blue;
+    font-weight: bold;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &:focus {
+      &+img {
+        opacity: 0;
+        height: 0;
+        width: 0;
+        top: 305px;
+        left: 425px;
+      }
+    }
+  }
+}
+
+.disclaimer-container {
+  z-index: 12;
+  font-size: 12px;
+  position: relative;
+  // max-width: 600px;
+  width: 100%;
+  left: 35px;
+  top: -23px;
+}
+
+.disclaimer {
+  z-index: 12;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  font-family: 'Erasmd';
+  color: #000000;
+}
+
+.write-a-note-component-wrapper {
+  &.sidenav-is-open {
+    width: calc(100% - 280px);
+
+    .top-send-button {
+      left: 765px;
+    }
+
+    .letter-page-wrapper {
+      margin-left: calc((100% - 850px - 280px) / 2);
+    }
+
+    h1 {
+      width: calc(100% - 280px);
+    }
+
+    h2 {
+      width: calc(100% - 280px);
+    }
+
+    .disclaimer-container {
+      width: calc(100% - 280px);
+    }
+  }
+
+}

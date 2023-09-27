@@ -1,0 +1,38 @@
+any-artist-card {
+  margin-bottom: 20px;
+}
+
+
+.artists-row {
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-items: center;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  .artist-card-container {
+    margin-bottom: 25px;
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+
+.flex-row {
+  width: calc(100% - 40px);
+}
+
+.component-wrapper {
+  height: fit-content;
+  &.sidenav-open {
+    .flex-row {
+      width: calc(100% - 320px);
+
+    }
+
+
+  }
+
+}
+

@@ -1,0 +1,19 @@
+<mat-card class="outlined">
+    <ng-container *ngIf="image && image.path">
+        <mat-card-header [ngClass]="image.titleFontClass || 'marker-felt-thin'" *ngIf="image.titleText && image.showTitle" class="image-display-title-text">
+            {{ image.titleText }}
+        </mat-card-header>
+
+        <mat-card-content>
+            <div *ngIf="image.type === 'gif'" #imageContainer [matTooltip]="image.titleText + ' - click to view'" matTooltipClass="gifs-app-tooltip" matTooltipPosition="above" class="display-image-container" [ngClass]="{'visibility-zero': showFullSize}">
+                <img src="{{image.path}}" alt="{{image.altText}}" [ngStyle]="{ 'width': widthStyle, 'background-color' : (image.backgroundColor ? image.backgroundColor : 'transparent') }" />
+            </div>
+            <div *ngIf="image.type === 'video'" #imageContainer [matTooltip]="image.titleText + ' - click to view'" matTooltipClass="gifs-app-tooltip" matTooltipPosition="above" class="display-image-container" [ngClass]="{'visibility-zero': showFullSize}">
+                <video *ngIf="!image.poster" [ngStyle]="{ 'width': widthStyle }" [poster]="image.poster" >
+                    <source src="{{image.path}}" />
+                </video>
+                <img *ngIf="image.poster" src="{{image.poster}}" alt="{{image.altText}}" [ngStyle]="{ 'width': widthStyle }" />
+            </div>
+        </mat-card-content>
+    </ng-container>
+</mat-card>

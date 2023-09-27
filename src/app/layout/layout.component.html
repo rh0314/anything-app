@@ -1,0 +1,32 @@
+<div class="layout-component-wrapper">
+  <any-header [theme]="theme" (rollUpChange)="onRollUpChange($event)" (boundingBoxChange)="onHeaderBoundingBoxChange($event)"></any-header>
+
+  <mat-drawer-container #drawerContainer class="mat-sidenav-container">
+    <mat-drawer #drawer mode="side">
+      <h1 class="sidenav-menu-header">
+        <div class="sidenav-menu-image-container">
+          <!-- <img class="menu-image" src="/assets/images/menu-black.PNG" /> -->
+          <div class="sidenav-menu-title">Menu</div>
+        </div>
+        <div class="spacer"></div>
+        <div class="close-sidenav-button-container">
+          <button matTooltip="Close Sidenav Menu" (click)="sidenavClose()" mat-icon-button *ngIf="sidenavIsOpen"><mat-icon>arrow_back_ios</mat-icon></button>
+        </div>
+
+      </h1>
+      <div class="sidenav-menu-wrapper">
+      <ng-container *ngIf="menuOptions$ | async as menuOptions">
+        <any-menu-item *ngFor="let item of menuOptions" class="menu-item" [option]="item"></any-menu-item>
+      </ng-container>
+      <any-device-info-display></any-device-info-display>
+    </div>
+
+    </mat-drawer>
+    <mat-drawer-content #drawerContent>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+  <any-main-content></any-main-content>
+
+</div>

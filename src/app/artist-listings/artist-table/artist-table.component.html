@@ -1,0 +1,63 @@
+<div class="artist-table-wrapper" [ngClass]="{ 'sidenav-open': sidenavIsOpen }">
+  <div class="paginator-header-wrapper">
+    <any-table-sort></any-table-sort>
+    <mat-paginator (page)="pageChanged($event)" [pageSize]="selectedSizeOption" [pageSizeOptions]="sizeOptions" [length]="totalArtists" showFirstLastButtons aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  <table mat-table [dataSource]="artists" class="mat-elevation-z8 artist-table" *ngIf="artists">
+
+    <ng-container matColumnDef="id">
+      <!-- <th mat-header-cell *matHeaderCellDef>  </th> -->
+      <td mat-cell *matCellDef="let row; let i = index">
+        <ng-template [ngTemplateOutlet]="artistTemplate" [ngTemplateOutletContext]="{
+                                    context: {
+                                        row: row,
+                                        index: i
+                                      }
+                                    }"></ng-template>
+
+        <ng-template #artistTemplate let-context="context">
+          <div class="artist-template-wrapper">
+            <div class="artist-template-row">
+              <h1 class="artist-name">{{row.name}}</h1>
+            </div>
+            <div class="artist-template-row">
+              <mat-expansion-panel class="bio-expansion-panel" (opened)="bioOpened(row)" (closed)="row.bioOpen = false">
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="about-the-artist">
+                    <h3>About the Artist</h3>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <div class="bio-preview" *ngIf="!row.bioOpen && !smallScreen">{{ row.bio }}</div>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div *ngIf="row.bioOpen" class="bio-text">{{row.bio}}</div>
+              </mat-expansion-panel>
+              <mat-expansion-panel class="albums-expansion-panel" (opened)="catalogOpened(row)" (closed)="catalogClosed(row)">
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="music-catalog">
+                    <h3>Music Catalog</h3>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <div class="catalog-preview" *ngIf="!row.catalogOpen"><span>{{ row.albums.length }} albums in catalog</span></div>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div *ngIf="row.catalogOpen" class="album-card-row">
+
+                  <any-album-card [album]="album" *ngFor="let album of row.albums"></any-album-card>
+                  <!-- <div *ngIf="!smallScreen" class="spacer"></div> -->
+                </div>
+              </mat-expansion-panel>
+
+            </div>
+          </div>
+        </ng-template>
+      </td>
+    </ng-container>
+
+
+    <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

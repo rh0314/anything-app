@@ -1,0 +1,27 @@
+@import '../../styles/global-theme';
+@import '../../styles/variables';
+
+.butters-gifs-tooltip {
+  font-size: 35px;
+}
+
+img,
+video {
+  display: flex;
+}
+
+.display-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-display-title-text {
+  text-align: center;
+  font-size: 24px;
+  max-width: 300px;
+
+  @media(max-width: $small-screen-cutoff) or (max-height: $small-screen-height-cutoff) {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+}

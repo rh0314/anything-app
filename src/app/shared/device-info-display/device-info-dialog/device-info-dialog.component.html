@@ -1,0 +1,13 @@
+<div class="dialog-wrapper">
+  <div class="device-info-group-wrapper" *ngFor="let key of keys">
+    <div class="device-info-heading">{{ key }}</div>
+    <div class="device-info-detail">
+      <ng-container *ngIf="!hasDeviceDetail(key)">No details available.</ng-container>
+      <ng-container *ngIf="hasDeviceDetail(key)">
+        <div class="device-info-detail-item" *ngFor="let item of getDeviceDetails(deviceInfo[key])">
+          <any-device-info-kvp-display [kvp]="item"></any-device-info-kvp-display>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+
+.mat-sidenav-container {
+    // min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    // top: 0;
+
+}
+
+.sidenav-toggle-button {
+    position: absolute;
+    padding: 8px;
+    z-index: 10;
+    width: 32px;
+    // transition-property: left;
+    // transition-duration: 500ms;
+    // transition-timing-function: ease-in-out; // cubic-bezier(1, 0.04, 0.4, 1.5);
+
+    .button-icon,
+    .button-text {
+        // color: $dark-text;
+        font-weight: bold;
+    }
+
+    &.opened {
+        left: 216px;
+
+        .button-icon {
+            font-size: 36px;
+        }
+    }
+
+    &.closed {
+        left: 0;
+
+        .button-icon {
+            font-size: 14px;
+            // color: $light-text;
+        }
+    }
+}
+
+.button-advertiser {
+    position: absolute;
+    left: 100px;
+    top: 5px;
+    z-index: 100;
+    font-family: 'happy giraffe';
+    font-size: 22px;
+    border-radius: 15px;
+    // transition-property: left;
+    // transition-duration: 450ms;
+    // transition-timing-function: cubic-bezier(.25, -.7, 1, ); //cubic-bezier(0.0, -3.75, 0.0, 0.0);
+    display: none;
+
+    mat-icon {}
+}
+
+mat-drawer-container {
+    width: 100%;
+    height: 100vh;
+}
+
+mat-drawer {
+    width: 280px;
+    min-width: 280px;
+    padding-top: 40px;
+}
+
+mat-drawer-content {
+    height: 100%;
+    width: 100%;
+    // background-color: transparent;
+}
+
+ul {
+    list-style: none;
+    margin-left: -25px;
+}
+
+.menu-item {
+    margin-bottom: 18px;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 15px;
+    padding: 3px;
+
+    .menu-item-link {
+        font-family: 'NEOTERIC';
+        font-size: 22px;
+        // color: $light-accent-text;
+        text-align: center;
+
+
+    }
+
+    &:hover {
+        padding: 2px;
+        border: 1px solid #0E7A34;
+    }
+
+
+    // &.active {
+    //     box-shadow: 3px 3px 15px #0E7A34, -3px -3px 15px #0E7A34;
+
+    //     .menu-item-link {
+    //         // color: $accent-lighter-color;
+    //         // text-shadow: 1px 1px 0.5px $accent-darker-color;
+    //     }
+    // }
+}

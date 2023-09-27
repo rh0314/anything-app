@@ -1,0 +1,162 @@
+  body {
+    overflow: hidden;
+    background-color: #000000;
+  }
+
+  h1 {
+    color: #FFFFFF;
+  }
+
+  .super-computer-page-outer-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-color: #000000;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .home-link {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    z-index: 5;
+    background-color: rgb(231, 230, 230);
+    width: 50%;
+
+    img {
+      box-shadow: none;
+    }
+  }
+
+  .letters-link {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    z-index: 5;
+    background-color: rgb(231, 230, 230);
+    width: 49%;
+  }
+
+  .home-link {
+    color: #FFFFFF;
+    font-size: 24px;
+  }
+
+  .home-link a:visited {
+    color: #FFFFFF;
+  }
+
+  .logo-image {
+
+    width: 200px;
+    max-width: 200px;
+  }
+
+  .super-computer-page-content-container {
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+    box-shadow: 0 0 0 #000000;
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
+  .top-spacer {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .super-computer-image {
+    width: 1440px;
+    height: 810px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    box-shadow: 0 0 0 #000000;
+    border: none;
+    background-image: url('../../assets/gifs/comp5.gif');
+    background-size: cover;
+    margin-top: 40px;
+    z-index: 10;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+
+    &.processing {
+      opacity: 0.35;
+    }
+
+    &:hover {
+      border: none;
+    }
+  }
+
+  .note {
+    color: blue;
+    width: 425px;
+    height: 550px;
+    background-image: url('../../assets/images/notepad.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 80px;
+    position: fixed;
+    z-index: 9;
+    padding-top: 36px;
+    padding-left: 95px;
+    position: fixed;
+    font-family: 'Chicken-Scratch';
+    font-size: 35px;
+    transform: rotate(90deg);
+    top: 200px;
+    left: -560px;
+    transition-timing-function: ease-in-out;
+
+    &.process-step-1 {
+      left: -360px;
+      transition-property: left;
+      transition-duration: 1000ms;
+    }
+
+    &.process-step-2 {
+      left: 1080px;
+      transition-duration: 5000ms;
+    }
+
+    &.process-step-3 {
+      left: 2000px;
+      transition-duration: 1000ms;
+    }
+  }
+
+  .marquee {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 45px;
+    text-align: center;
+    width: 80%;
+    max-width: 80%;
+    position: fixed;
+    top: 80px;
+    z-index: 11;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    &.move {
+      left: 1500px;
+    }
+  }
+
+  .show {
+    opacity: 1;
+  }

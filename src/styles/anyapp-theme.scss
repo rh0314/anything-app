@@ -1,0 +1,88 @@
+/*
+  this is the over-arching theme file.  It is loaded in angular.json and it directly or indirectly loads all other theme-related scss files.
+*/
+
+
+@use '@angular/material' as mat;
+@import './global-theme';
+@import './global';
+@import './variables';
+@import '../app/image-display/image-display-theme';
+@import '../app/theme-switcher/theme-switcher-theme';
+@import '../app/overview-dialog/overview-dialog-theme'; 
+@import '../app/admin/edit-menu-options/editable-menu-option/editable-menu-option-theme';
+@import '../app/admin/edit-menu-options/edit-menu-options-component-theme';
+@import '../app/header/header.component.theme';
+@import 'src/app/artist-listings/artist-table/_artist-table-theme.scss';
+@import 'src/app/artist-listings/album-card/album-card-component-theme';
+@import 'src/app/shared/device-info-display/device-info-dialog/device-info-dialog-theme';
+
+@include mat.core();
+mat.$theme-ignore-duplication-warnings: true;
+
+// DARK THEME
+.dark-theme {
+  $anyapp-dark-primary: mat.define-palette(mat.$light-blue-palette, A200, A100, A400);
+  $anyapp-dark-accent: mat.define-palette(mat.$grey-palette, A200, A100, 400);
+  $anyapp-dark-theme: mat.define-dark-theme((color: (primary: $anyapp-dark-primary,
+        accent: $anyapp-dark-accent,
+      ),
+      typography: mat.define-typography-config(),
+    ));
+
+  @include set-global-theme($anyapp-dark-theme);
+  @include mat.all-component-themes($anyapp-dark-theme);
+  @include style-images-dark-theme($anyapp-dark-theme);
+  @include title-primary-color($anyapp-dark-theme);
+  @include subtitle-accent-color($anyapp-dark-theme);
+  @include tooltip-style-dark($anyapp-dark-theme);
+  @include active-menu-item-common($anyapp-dark-theme);
+  @include active-menu-item-dark($anyapp-dark-theme);
+  @include toggle-button-style($anyapp-dark-theme);
+  @include overview-dialog-dark-theme($anyapp-dark-theme);
+  @include info-icons($anyapp-dark-theme);
+  @include accordion-dark-theme($anyapp-dark-theme);
+  @include edit-menu-options-dark-theme($anyapp-dark-theme);
+  @include todo-icons($anyapp-dark-theme);
+  @include editable-menu-options($anyapp-dark-theme);
+  @include snackbar-dark-theme($anyapp-dark-theme);
+  @include header-dark-theme($anyapp-dark-theme);
+  @include sidenav-dark-theme($anyapp-dark-theme);
+  @include artist-table-dark-theme($anyapp-dark-theme);
+  @include album-card-dark-theme($anyapp-dark-theme);
+  @include device-info-dialog-dark-theme($anyapp-dark-theme);
+}
+
+// LIGHT THEME
+
+.light-theme {
+  $anyapp-light-primary: mat.define-palette(mat.$indigo-palette, 700, 300, A700);
+  $anyapp-light-accent: mat.define-palette(mat.$light-blue-palette, 800, 900, 700);
+  $anyapp-light-theme: mat.define-light-theme((color: (primary: $anyapp-light-primary,
+        accent: $anyapp-light-accent,
+      ),
+      typography: mat.define-typography-config(),
+    ));
+  @include set-global-theme($anyapp-light-theme);
+  @include mat.all-component-themes($anyapp-light-theme);
+  @include style-images-light-theme($anyapp-light-theme);
+  @include title-primary-color($anyapp-light-theme);
+  @include subtitle-accent-color($anyapp-light-theme);
+  @include tooltip-style-light($anyapp-light-theme);
+  @include active-menu-item-common($anyapp-light-theme);
+  @include active-menu-item-light($anyapp-light-theme);
+  @include toggle-button-style($anyapp-light-theme);
+  @include overview-dialog-light-theme($anyapp-light-theme);
+  @include info-icons($anyapp-light-theme);
+  @include setAppLightBackground($anyapp-light-theme);
+  @include accordion-light-theme($anyapp-light-theme);
+  @include edit-menu-options-light-theme($anyapp-light-theme);
+  @include editable-menu-options($anyapp-light-theme);
+  @include snackbar-light-theme($anyapp-light-theme);
+  @include header-light-theme($anyapp-light-theme);
+  @include sidenav-light-theme($anyapp-light-theme);
+  @include artist-table-light-theme($anyapp-light-theme);
+  @include album-card-light-theme($anyapp-light-theme);
+  @include device-info-dialog-light-theme($anyapp-light-theme);
+
+}

@@ -1,0 +1,104 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin accordion-dark-theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+  $warn-palette: map.get($color-config, 'warn');
+
+  mat-expansion-panel {
+    &.mat-expanded {
+      //background-color: rgba(mat.get-color-from-palette($primary-palette, 900), 1);
+      background-color: #00000090;
+      mat-expansion-panel-header {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+    .exp-pnl-title {
+      color: rgba(255, 255, 255, 0.4)
+    }
+    
+    .exp-pnl-description {
+    color: #FFFFFF;
+
+  }
+
+  mat-form-field {
+    &.ng-dirty {
+      .form-field-label {
+        color: #039be5;
+      }
+
+    }
+  }
+
+  .delete-button {
+    mat-icon {
+      color: mat.get-color-from-palette($warn-palette, 500);
+    }
+  }
+
+  .move-button {
+    mat-icon {
+      color: mat.get-color-from-palette($accent-palette, A700);
+    }
+  }
+}
+
+@mixin accordion-light-theme($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+  $warn-palette: map.get($color-config, 'warn');
+
+  mat-expansion-panel {
+    &.mat-expanded {
+      // background-color: mat.get-color-from-palette($primary-palette, 100);
+      background-color: #FFFFFF;
+    }
+  }
+
+  .exp-pnl-title {
+    color: rgba(0, 0, 0, 0.4)
+  }
+
+  .exp-pnl-description {
+    color: #000000;
+
+  }
+
+  mat-form-field {
+    &.ng-dirty {
+      .form-field-label {
+        color: #039be5;
+      }
+
+    }
+  }
+
+  .delete-button {
+    mat-icon {
+      color: mat.get-color-from-palette($warn-palette, 700);
+    }
+  }
+
+  .move-button {
+    mat-icon {
+      color: mat.get-color-from-palette($accent-palette, A700);
+    }
+  }
+}
+
+@mixin editable-menu-options($theme) {
+  $color-config: mat.get-color-config($theme);
+  $primary-palette: map.get($color-config, 'primary');
+  $accent-palette: map.get($color-config, 'accent');
+  $warn-palette: map.get($color-config, 'warn');
+
+  .unsaved-changes-marker {
+    color: mat.get-color-from-palette($warn-palette, 500);
+  }
+}

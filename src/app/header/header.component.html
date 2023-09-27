@@ -1,0 +1,35 @@
+<div class="header-wrapper" [ngClass]="{ 'roll-up': rollUp }">
+  <mat-toolbar color="primary" class="header-main-toolbar">
+    <div class="toolbar-content-wrapper">
+      <any-header-menu [show]="smallScreen" [theme]="theme" [windowData]="windowData"></any-header-menu>
+      <button mat-icon-button *ngIf="!smallScreen" (click)="sidenavToggleButtonClick()" aria-label="menu icon" [matTooltip]="'click to ' + (sidenavIsOpen ? 'close' : 'open') + ' the menu'" matTooltipClass="butters-gifs-tooltip"
+        matTooltipPosition="above" [disabled]="sidenavIsOpen">
+        <mat-icon *ngIf="!sidenavIsOpen">menu</mat-icon>
+      </button>
+      <div class="app-title"><a href="/"><img class="app-title-img" src="assets/images/anything-app-sm.PNG"></a></div>
+      <div class="spacer" *ngIf="smallScreen"></div>
+      <div class="roll-up-button" *ngIf="smallScreen"><button mat-icon-button (click)="forceRollUpClick()"><mat-icon>keyboard_arrow_up</mat-icon></button></div>
+      <ng-container *ngIf="!smallScreen">
+        <mat-icon class="info-icon" (click)="infoIconClick('global')" matTooltip="General App Info">info</mat-icon>
+        <span class="spacer spacer-with-text"><div><a href="https://github.com/rh0314/anything-app" target="_blank" title="github repo">github repo</a></div></span>
+        <mat-icon class="info-icon" (click)="infoIconClick('header')" matTooltip="About this header">info</mat-icon>
+        <span class="spacer"></span>
+        <mat-icon class="info-icon" (click)="infoIconClick('theme')" matTooltip="About this theme switcher">info</mat-icon>
+      </ng-container>
+      <any-theme-switcher *ngIf="!smallScreen"></any-theme-switcher>
+    </div>
+  </mat-toolbar>
+  <mat-toolbar *ngIf="smallScreen" class="small-screen-toolbar">
+    <mat-icon class="info-icon" (click)="infoIconClick('header')">info</mat-icon>
+    <button mat-link-button (click)="infoIconClick('header')">Info about this header</button>
+    <span class="spacer"></span>
+    <mat-icon class="info-icon" (click)="infoIconClick('global')">info</mat-icon>
+    <button mat-link-button (click)="infoIconClick('global')">App General Info</button>
+  </mat-toolbar>
+
+</div>
+<div class="unhide-header-tab-wrapper" [ngClass]="{ 'roll-up': rollUp }" (click)="unRollUpClick()">
+  <div class="unhide-header-tab">
+    <mat-icon>keyboard_arrow_down</mat-icon>
+  </div>
+</div>

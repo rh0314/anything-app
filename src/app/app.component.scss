@@ -1,0 +1,42 @@
+@import '../styles/variables';
+
+#mainAppDiv {
+  display: block;
+  @media(max-width: $screen-min-width) {
+    display: none;
+  }
+}
+
+#tooSmallDiv {
+  display: none; 
+  font-size: 32px;
+  padding: 4px;
+  display: none;
+  @media(max-width: $screen-min-width) {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 16px);
+  }
+  .tooSmallMessage {
+    display: flex;
+    width: calc(100% - 16px);
+  }
+  .windowData {
+    font-size: 12px;
+    display: flex;
+    width: calc(100% - 16px);
+
+    table {
+      width: calc(100% - 16px);
+      margin-right: 4px;
+      margin-left: 16px;
+      tr {
+        td {
+          border: 1px solid black;
+          font-size: 14px;
+          padding: 4px;
+        }
+      }
+    }
+  }
+}

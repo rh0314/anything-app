@@ -1,0 +1,19 @@
+<div class="component-wrapper overview-dialog-wrapper" *ngIf="overview$ | async as overview">
+  <mat-card [ngClass]="{ 'small-screen': smallScreen}">
+    <mat-card-header>
+      <div class="overview-header" >
+        <div class="overview-title overview-header-item">{{ overview.title }}</div>
+        <div class="overview-header-item spacer"></div> 
+        <!-- <div class="overview-header-item close-button-container"><button class="overview-close-button" mat-icon-button color="warn" (click)="close()"><mat-icon>close</mat-icon></button></div> -->
+        
+      </div>
+    </mat-card-header>
+
+    <mat-card-content anySizeWatcher cdkScrollable class="overview-body" [innerHTML]="overview.safeDescription" [ngClass]="{ 'small-screen': smallScreen }">
+
+    </mat-card-content>
+
+    <div class="overview-footer">
+
+    </div>
+  </mat-card>

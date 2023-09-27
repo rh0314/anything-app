@@ -1,0 +1,21 @@
+table {
+  display: flex;
+  flex-direction: column;
+  
+  thead {
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    td {
+      white-space: no-wrap;
+    }
+  }
+
+  td {
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: 2px solid black;
+    &:first-of-type {
+      border-right: none;
+    }
+  }
+}

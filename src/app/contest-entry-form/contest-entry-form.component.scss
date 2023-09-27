@@ -1,0 +1,122 @@
+@import '../../styles/variables';
+@import '../../styles/global-theme';
+
+$card-side-margin: 70px;
+$card-side-margin-small: 5px;
+
+
+mat-card {
+  // width: calc(100vw - $card-side-margin - $card-side-margin);
+  // max-width: calc(100vw - $card-side-margin - $card-side-margin);
+
+  width: 94%;
+  max-width: 94%;
+  margin-left: 3%;
+  margin-right: 3%;
+
+  mat-card-content {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  &.sidenav-open {
+    // width: calc(100vw - 280px - $card-side-margin - $card-side-margin);
+    // max-width: calc(100vw - 280px - $card-side-margin - $card-side-margin);
+    width: calc(94% - 280px);
+    max-width: calc(94% - 280px);
+  }
+}
+
+.flex-row {
+
+  &.sidenav-open {
+    width: calc(100vw - 280px - $card-side-margin - $card-side-margin);
+    max-width: calc(100vw - 280px - $card-side-margin - $card-side-margin);
+
+    mat-card {
+      width: calc(100vw - 280px - $card-side-margin - $card-side-margin);
+      max-width: calc(100vw - 280px - $card-side-margin - $card-side-margin);
+    }
+
+    mat-card-content {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+
+
+  &.smallScreen {
+    max-width: 100%;
+    width: 100%;
+
+    mat-card,
+    mat-card-content {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: calc(100% - $card-side-margin - $card-side-margin);
+
+  @media(max-width: $small-screen-cutoff ) or (max-height: $small-screen-height-cutoff) {
+    flex-direction: column;
+  }
+
+  // font-family: 'Arial';
+  // font-size: 16px;
+
+  .form-field {
+    display: flex;
+    // flex-direction: column;
+
+    &.textbox-form-field {
+      // padding-left: 7px;
+      // padding-right: 8px;
+    }
+
+    .form-field-label {
+      // display: flex;
+
+    }
+
+    input {
+      // display: flex;
+      // width: 100%;
+    }
+
+    &.checkbox-form-field {
+      padding-top: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      label {
+        display: flex;
+        font-family: Eraslght,
+          sans-serif;
+        letter-spacing: 2px;
+      }
+
+      mat-checkbox {
+        display: flex;
+        min-width: 18px;
+        min-height: 18px;
+      }
+
+    }
+  }
+}
+
+mat-card-footer {
+  button {
+    float: right;
+    margin-right: 60px;
+  }
+}

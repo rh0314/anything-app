@@ -1,0 +1,19 @@
+<div #componentWrapper class="component-wrapper tabs-component-wrapper" [ngClass]="{ 'sidenavIsOpen': sidenavIsOpen}" (selectedIndexChange)="tabChanged($event)">
+  <mat-tab-group [selectedIndex]="activeTabIndex" (selectedTabChange)="tabChanged($event)">
+    <mat-tab label="Butters Animations">
+      <div class="tab-content-wrapper">
+        <any-image-board [contentKey]="'butters'"></any-image-board>
+      </div>
+    </mat-tab>
+    <mat-tab label="Butters Videos">
+      <div class="tab-content-wrapper">
+        <any-image-board [contentKey]="'butters-videos'"></any-image-board>
+      </div>
+    </mat-tab>
+    <mat-tab label="Miscellaneous Animations">
+      <div class="tab-content-wrapper">
+        <any-image-board [contentKey]="'misc'"></any-image-board>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

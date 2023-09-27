@@ -1,0 +1,22 @@
+<div class="header-menu-wrapper" *ngIf="show && options$ | async as options">
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="open menu button">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <ng-container>
+    <mat-menu #menu="matMenu">
+      <div *ngFor="let option of options">
+        <any-menu-item class="menu-item" [option]="option" ></any-menu-item>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="theme-switch-wrapper">
+        <any-theme-switcher></any-theme-switcher>
+        <div class="spacer"></div>
+        <div class="info-i-wrapper">
+          <mat-icon class="info-icon" color="warn" (click)="infoIconClick($event)" matTooltip="About this theme switcher">info</mat-icon>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <any-device-info-display></any-device-info-display>
+    </mat-menu>
+  </ng-container>
+</div>

@@ -1,0 +1,33 @@
+@import '../../node_modules/@angular/material/core/theming/_palette.scss';
+
+$blue-green-palette: (
+  50: #83FF87,
+  100: #C7FF5C,
+  200: #A7FA08,
+  300: #05F60D,
+  400: #04D446,
+  500: #07EA8E,
+  600: #04D4BB,
+  700: #05D1F6,
+  800: #03AB09,
+  900: #026B06,
+  A100: #AAFFB8,
+  A200: #6BFFC2,
+  A400: #05F50D,
+  A700: #41DE07,
+  contrast: (50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);

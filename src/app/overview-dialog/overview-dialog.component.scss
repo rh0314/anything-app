@@ -1,0 +1,68 @@
+@import '../../styles/variables';
+
+mat-card {
+  padding: 40px;
+
+  &.small-screen {
+    max-height: 100vh;
+    padding: 15px;
+  }
+}
+
+.overview-header {
+  // display: flex;
+  // flex-direction: row;
+  justify-items: space-between;
+  width: 100%;
+
+  .overview-header-item {
+    display: flex;
+    flex: 0;
+
+    &.spacer {
+      flex: 1;
+    }
+  }
+}
+
+.overview-title {
+  font-family: 'NEOTERIC';
+  font-weight: bold;
+  font-size: 32px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  min-width: 100%;
+  display: flex;
+}
+
+.overview-body {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: 'Eraslght' 'Arial';
+  letter-spacing: 2px;
+  font-size: 22px;
+  overflow-y: auto;
+  line-height: 28px;
+
+  @media(max-width: $small-screen-cutoff) {
+    overflow-y: auto;
+    font-size: 18px;
+    padding-bottom: 40px;
+  }
+}
+
+.overview-close-button {
+    top: -45px;
+    left: 140px;
+    // margin-top: 40px;
+    // margin-right: -35px;
+  }
+
+  img {
+    max-width: 125px;
+
+    &:hover {
+      outline: none;
+    }
+  }

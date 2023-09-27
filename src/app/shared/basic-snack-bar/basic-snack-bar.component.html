@@ -1,0 +1,10 @@
+<div class="basic-snackbar-wrapper">
+  <div class="basic-snackbar-message" [innerHTML]="message"></div>
+  <div class="snackbar-actions-row">
+    <div class="spacer"></div>
+    <span *ngFor="let action of actions"><a *ngIf="(action.functionName || action.function || action.customFunction) && !action.icon" color="{{ action.themeColor }}" mat-raised-button (click)="doAction(action)"> {{action.text}} </a>
+      <a *ngIf="!action.functionName && action.link" color="{{ action.themeColor }}" mat-raised-button [href]="action.link"> {{action.text}} </a>
+      <button mat-icon-button *ngIf="action.icon && (action.functionName || action.function || action.customFunction)" (click)="doAction(action)"><mat-icon>{{action.icon}}</mat-icon></button></span>
+
+  </div>
+</div>

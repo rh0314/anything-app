@@ -1,0 +1,21 @@
+<div *ngIf="option.mobile || !smallScreen" class="menu-item-component-wrapper">
+  <div class="menu-item-content" [ngClass]="{ 'active' : option.isActive(currentMenuItemId)}">
+    <div class="menu-item-selectable" *ngIf="!option.divider && !option.subheader" (click)="itemClick()">
+      {{ option.title }}
+    </div>
+    <div *ngIf="option.subheader && option.title" class="menu-subheader">
+      {{ option.title }}
+    </div>
+  </div>
+  <mat-divider *ngIf="option.divider"></mat-divider>
+  <div *ngIf="option.children" class="parent-menu-container">
+    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title class="about-the-artist">
+                          <h3>{{option.title}}</h3>
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <any-menu-item *ngFor="let childOption of option.children" [option]="childOption"></any-menu-item>
+    </mat-expansion-panel>
+  </div>
+</div>
