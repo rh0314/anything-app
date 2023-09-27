@@ -52,14 +52,14 @@ export class ImageDisplayComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit() {
-    this.gtag = this.windowRef.gtag;
+    // this.gtag = this.windowRef.gtag;
   }
   
   ngAfterViewInit(): void {
   }
 
   onClick() {
-    this.gtag("event", "Video Clicked gtm.js", { send_to: "G-0XFXF8DZ2J" })
+    // this.gtag("event", "Video Clicked gtm.js", { send_to: "G-0XFXF8DZ2J" })
     this.dialogService.openContentItemDialog(this.image);
   }
  
