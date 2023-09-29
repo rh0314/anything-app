@@ -10,6 +10,8 @@ import { ArtistListingsComponent } from './artist-listings/artist-listings.compo
 import { SuperComputerComponent } from './super-computer/super-computer.component';
 import { HomeComponent } from './home/home.component';
 import { TitleResolver } from './shared/title.resolver';
+import { LineChartComponent } from './charts/line-chart/line-chart.component';
+import { DashboardComponent } from './charts/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -25,7 +27,8 @@ const routes: Routes = [
       { path: 'admin/menu-options', component: EditMenuOptionsComponent, resolve: { menuItemId: MenuItemIdResolver, title: TitleResolver } },
       { path: 'music/artist-listing', component: ArtistListingsComponent, resolve: { menuItemId: MenuItemIdResolver, title: TitleResolver } },
       { path: 'home', component: HomeComponent, resolve: { menuItemId: MenuItemIdResolver, title: TitleResolver } },
-      
+      { path: 'line-chart', component: LineChartComponent },
+      { path: 'dashboard', component: DashboardComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ]
   },

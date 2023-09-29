@@ -56,6 +56,11 @@ import { PaginatorSortDirective } from './shared/paginator-sort.directive';
 import { TableSortComponent } from './shared/table-sort/table-sort.component';
 import { DeviceInfoDialogComponent } from './shared/device-info-display/device-info-dialog/device-info-dialog.component';
 import { DeviceInfoKvpDisplayComponent } from './shared/device-info-display/device-info-kvp-display/device-info-kvp-display.component';
+import { NgChartsModule } from 'ng2-charts';
+import { LineChartComponent } from './charts/line-chart/line-chart.component';
+import { DashboardComponent } from './charts/dashboard/dashboard.component';
+import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
+import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +94,10 @@ import { DeviceInfoKvpDisplayComponent } from './shared/device-info-display/devi
     TableSortComponent,
     DeviceInfoDialogComponent,
     DeviceInfoKvpDisplayComponent,
+    LineChartComponent,
+    DashboardComponent,
+    PieChartComponent,
+    BarChartComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -118,6 +127,7 @@ import { DeviceInfoKvpDisplayComponent } from './shared/device-info-display/devi
     MatTooltipModule,
     MatTreeModule, 
     ReactiveFormsModule,
+    NgChartsModule,
   ],
   providers: [
     { provide: Window, useValue: window },
