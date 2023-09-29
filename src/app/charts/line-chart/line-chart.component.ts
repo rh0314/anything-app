@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChartConfiguration, ChartOptions, ChartType } from "chart.js";
+import { ChartConfiguration, ChartOptions, ChartType, Colors } from "chart.js";
 
 @Component({
   selector: 'any-line-chart',
@@ -18,6 +18,7 @@ export class LineChartComponent {
       'June',
       'July'
     ],
+    // colors: [ 'red', 'blue', 'purple', 'yellow', 'green', 'orange', 'violet' ],
     datasets: [
       {
         data: [65, 59, 80, 81, 56, 55, 40],
