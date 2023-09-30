@@ -41,6 +41,9 @@ export class MenuItemComponent {
   }
 
   itemClick() {
+    if (this.option.appTitle) {
+      this.windowRef.title = this.option.appTitle;
+    }
     if (this.option.divider || !(this.option.path || this.option.function)) { return; }
     else if (this.option.function) {
       eval(this.option.function);

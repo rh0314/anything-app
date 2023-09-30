@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { DialogService } from 'src/app/services/dialog.service';
 import { SidenavService } from 'src/app/services/sidenav.service';
 
 @Component({
@@ -9,10 +10,18 @@ import { SidenavService } from 'src/app/services/sidenav.service';
 })
 export class DashboardComponent {
   sidenavIsOpen: boolean;
+  dashboardData = {};
 
-  constructor(private sidenavService: SidenavService) {
+  constructor(
+    private sidenavService: SidenavService,
+    private dialogService: DialogService
+    ) {
     this.sidenavService.sidenavOpenClosedUpdater.pipe(takeUntilDestroyed()).subscribe(data => {
       this.sidenavIsOpen = !!data;
     });
+  }
+
+  infoClick() {
+    this.dialogService.openOverviewDialog('charts');
   }
 }

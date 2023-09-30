@@ -1,7 +1,16 @@
 <div class="component-wrapper">
 
   <div class="dashboard-wrapper" [ngClass]="{ 'sidenav-is-open': sidenavIsOpen }">
-
+  <div class="flex-row" [ngClass]="{'sidenav-open': sidenavIsOpen}">
+    <div class="flex-padding h1-buffer"></div>
+    <h1 [ngClass]="'markerfelt-thin'" class="component-title">Daily Data Dashboard <mat-icon class="info-icon" (click)="infoClick()">info</mat-icon></h1>
+    <div class="flex-padding h1-buffer"></div>
+  </div>
+  <div class="flex-row" [ngClass]="{'sidenav-open': sidenavIsOpen}" *ngIf="dashboardData">
+    <div class="flex-padding h1-buffer"></div>
+    <h2 class="component-subtitle">Data to Make You Smarter</h2>
+    <div class="flex-padding h1-buffer"></div>
+  </div>
     <div class="charts-row">
       <div class="chart-container">
         <any-line-chart></any-line-chart>

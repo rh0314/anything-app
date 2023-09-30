@@ -28,7 +28,7 @@ const routes: Routes = [
       { path: 'music/artist-listing', component: ArtistListingsComponent, resolve: { menuItemId: MenuItemIdResolver, title: TitleResolver } },
       { path: 'home', component: HomeComponent, resolve: { menuItemId: MenuItemIdResolver, title: TitleResolver } },
       { path: 'line-chart', component: LineChartComponent },
-      { path: 'dashboard', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent, resolve: { menuItemId: MenuItemIdResolver, title: TitleResolver }},
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ]
   },
