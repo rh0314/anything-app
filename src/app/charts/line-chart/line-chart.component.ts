@@ -8,6 +8,7 @@ import { ChartConfiguration, ChartOptions, ChartType, Colors } from "chart.js";
 })
 export class LineChartComponent {
   title = 'ng2-charts-demo';
+  data = [];
   public lineChartData: ChartConfiguration<'line'>['data'] = {
     labels: [
       'January',
@@ -18,10 +19,9 @@ export class LineChartComponent {
       'June',
       'July'
     ],
-    // colors: [ 'red', 'blue', 'purple', 'yellow', 'green', 'orange', 'violet' ],
     datasets: [
       {
-        data: [65, 59, 80, 81, 56, 55, 40],
+        data: this.data,
         label: 'Series A',
         fill: true,
         tension: 0.5,
@@ -35,8 +35,13 @@ export class LineChartComponent {
   };
   public lineChartLegend = true;
 
-  constructor() {}
+  constructor() {
+
+  }
 
   ngOnInit() {
+    for(let i = 0; i < 7; i++) {
+      this.data.push(Math.random() * 100);
+    }
   }
 }

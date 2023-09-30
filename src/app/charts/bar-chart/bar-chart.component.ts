@@ -8,15 +8,17 @@ import { ChartConfiguration } from 'chart.js';
 })
 export class BarChartComponent {
   title = 'ng2-charts-demo';
-
+  data1 = [];
+  data2 = [];
+  years = [];
   public barChartLegend = true;
   public barChartPlugins = [];
 
   public barChartData: ChartConfiguration<'bar'>['data'] = {
-    labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
+    labels: this.years,
     datasets: [
-      { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-      { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+      { data: this.data1, label: 'Series A' },
+      { data: this.data2, label: 'Series B' }
     ]
   };
 
@@ -25,5 +27,12 @@ export class BarChartComponent {
   };
 
   constructor() {
+    const max = parseInt(((Math.random() * 7) + 5).toString());
+    for (let i = 0; i < max; i++) {
+      this.data1.push(Math.random() * 100);
+      this.data2.push(Math.random() * 100);
+      this.years.push((2011 + i).toString());
+    }
+
   }
 }
